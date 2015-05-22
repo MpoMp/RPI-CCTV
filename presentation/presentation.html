@@ -13,24 +13,22 @@
 	</header>
 	
 	<section class="slide cover" id="Cover"><div>
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
+		<h2>Raspberry Pi Home Security Camera</h2>
+		<p>Brought to you by Linuxoeideis</p>
 		<img src="pictures/cover.jpg" alt="">
-		<!--
-			To apply styles to the certain slides
-			set slide ID to get needed elements
-			-->
 		<style>
 			#Cover h2 {
-				margin:30px 0 0;
+				margin:1px 0 0;
 				color:#FFF;
+				text-shadow: 2px 2px #BABABA;
 				text-align:center;
 				font-size:70px;
 				}
 			#Cover p {
-				margin:10px 0 0;
+				margin:300px 0 0;
 				text-align:center;
-				color:#FFF;
+				color:red;
+				text-shadow: 1px 1px #666666;
 				font-style:italic;
 				font-size:20px;
 				}
@@ -39,130 +37,64 @@
 					}
 		</style>
 	</div></section>
+	
 	<section class="slide"><div>
-		<h2>Shower Key Features</h2>
+		<h2>Home Security Camera; Why?</h2>
 		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>All modern browsers are supported</li>
-			<li>Slide themes are separated from engine</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
+			<li class="next">You leave and nobody else is home.</li>
+			<li class="next">You have a reckless cat or dog.</li>
+			<li class="next">Your significant other is unfaithful.</li>
+			<li class="next">You like to watch what everyone is doing in your house.</li>
 		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+		<blockquote><p><i>There is no such thing as perfect security, only varying levels of insecurity. </i></p></blockquote>
 	</div></section>
+	
+	
 	<section class="slide"><div>
-		<h2>Plain Text on Your Slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-	</div></section>
-	<section class="slide"><div>
-		<h2>All Kind of Lists</h2>
+		<h2>Home Security Camera; Issues</h2>
 		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
-		</ol>
+			<li><b>Cost</b>; camera, cables, storage, setup.</li>
+			<li class="next"><b>Complexity</b>; house modifications, camera setup, storage and recording.</li>
+			<li class="next"><b>Access</b>; local only or remote, access control, protection.</li>
+			<li class="next"><b>Ownership</b>; yours or by a third-party.</li>
+		</ol>	
+		<center><img src="pictures/nosec.jpg" style="width:300px;height:180px"></center>		
 	</div></section>
+	
 	<section class="slide"><div>
-		<h2>Serious Citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
+		<h2>Common solutions for home CCTV</h2>
+		<ol>
+			<li><b>Cost</b> range from 400 to 3000+ euro...</li>
+			<li class="next"><b>Difficulty</b> in installing and configuring.</li>
+			<li class="next">In some cases there are no options for customization at all.</li>
+			<li class="next">You have to use specific types of storage and cables.</li>
+		</ol>	
 	</div></section>
+	
 	<section class="slide"><div>
-		<h2>Code Samples</h2>
-		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code>&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <mark class="comment">&lt;!--Comment--&gt;</mark></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
-		</pre>
+		<h2>The RPI solution</h2>
+		<ol>
+			<li><b>Cheap and scalable</b>; use a simple USB camera or an HD security camera.</li>
+			<<li class="next"><b>Easy to setup</b>; hundreds of guides for setting up Raspbian and the camera software.</li>
+			<li class="next"><b>Highly customisable</b>; based mostly on open software and flexible hardware.</li>
+			<li class="next"><b>Accessible and secure</b>; access locally or via the Internet, use and configure any type of security measures you prefer.</li>
+		</ol>	
 	</div></section>
+	
+	
 	<section class="slide"><div>
-		<h2>Even Tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
+		<h2>Topology</h2>
+		<center><img src="pictures/topology.jpg" style="width:600px;height:400px"></center>
 	</div></section>
-	<section class="slide cover" id="Picture"><div>
-		<h2>Pictures</h2>
-		<img src="pictures/picture.jpg" alt="">
-		<style>
-			#Picture h2 {
-				color:#FFF;
-				}
-		</style>
-	</div></section>
+	
+	
+	
 	<section class="slide shout"><div>
-		<h2>You can even shout this way</h2>
+		<h2>KEK</h2>
+		<p>TODO: add info about motion, streaming, motion detect, drive storage URL</p>
 	</div></section>
-	<section class="slide"><div>
-		<h2>Inner Navigation</h2>
-		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
-		</ol>
-	</div></section>
-	<section class="slide shout" id="SeeMore"><div>
-		<h2><img src="pictures/logo.svg" alt=""> <a href="https://github.com/shower/shower">See more on GitHub</a></h2>
-		<style>
-			#Picture h2 {
-				color:#FFF;
-				}
-			#SeeMore h2 {
-				font-size:100px
-				}
-			#SeeMore img {
-				width:0.72em;
-				height:0.72em;
-				}
-		</style>
-	</div></section>
+	
+
 	
 	<!--
 		To hide progress bar from entire presentation
