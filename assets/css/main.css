@@ -6,12 +6,8 @@ body{
 
 .boby{
 	background:#4A4A4A;
-	min-width: 96%;
 	min-height: 100%;
-	max-width: 96%;
 	max-height: 100%;
-	height: auto;
-	width: auto;
 }
 
 .header{
@@ -21,8 +17,6 @@ body{
 		font-size: 0.8em;
 		padding: 1em 2em;
 		position: relative;
-		min-width: 100%;
-		min-height: 100%;
 		color: #FFFFFF;
 }
 
@@ -62,8 +56,8 @@ img {
 		font-size: 0.8em;
 		padding: 1em 2em 1em;
 		position: relative;
-		bottom: 0;
-		min-width: 100%;
+		bottom: 0px;
+		max-width: 100%;
 		width: auto;
 		height: auto;
 		color: #FFFFFF;
