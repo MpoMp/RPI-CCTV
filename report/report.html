@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <link href="css/main.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/script.js"></script>
+	<title>Report | RPI SecCam</title>
+	<link rel="icon" type="image/png" href="../images/favicon.png" />
 </head>
 <body>
     <div class="example">
@@ -48,7 +50,8 @@
 			<li>Operating System: Boots from Micro SD card, running a version of the Linux operating system
 			<li>Dimensions: 85 x 56 x 17mm
 			<li>Power: Micro USB socket 5V, 2A</ul>
-			<p class="report">Επιπλέον, για την καταγραφή βίντεο και τη λήψη φωτογραφιών χρησιμοποιήθηκαν: το "Raspberry Pi Camera Module" και μία USB camera.</p><br>
+			<p class="report">Επιπλέον, για την καταγραφή βίντεο και τη λήψη φωτογραφιών χρησιμοποιήθηκαν: το "Raspberry Pi Camera Module" και μία USB camera. 
+			Απαραίτητη για το streaming είναι η ύπαρξη DSL σύνδεσης και ενός αντίστοιχου απλού DSL Router.</p><br>
 				
             <h2>Αναλυτικά: Software</h2><p style="float: right;"><img src="../images/motion.png" style="width:100px;padding-right:100px"></p>
             <p class="report">Κύριο συστατικό της εργασίας είναι το ελεύθερο και ανοιχτού κώδικα λογισμικό <b>Motion</b>.<br>
@@ -66,6 +69,34 @@
 			Για την παραμετροποίηση του port forwarding, μπορεί κανείς να κάνει μια σχετική αναζήτηση στο διαδίκτυο και να συμβουλευτεί το εγχειρίδιο χρήσης του router που διαθέτει. 
 			Δίνεται επίσης η επιλογή να χρησιμοποιηθεί κάποιο domain name για τη διευκόλυνση της πρόσβασης. Υπάρχουν οργανισμοί που διαθέτουν και δωρεάν υπηρεσίες DDNS.</p>
             <br>
+			
+			<h2>Αναλυτικά: Εγκατάσταση και παραμετροποίηση</h2>
+            <p class="report">Η εγκατάσταση της βασικής έκδοσης του Motion μπορεί να γίνει και μέσω package manager και "χειροκίνητα". Για διανομές Linux όπως το Ubuntu, αρκεί η εντολή:
+			<br><br><strong>sudo apt-get install motion</strong><br><br>
+			Για να κατεβάσετε και να κάνετε build τα πακέτα, υπάρχουν πολυάριθμοι οδηγοί στο διαδίκτυο, στη σελίδα του Motion που παραθέτουμε στις πηγές καθώς και αλλού.
+			Το Motion-MMAL εγκαθίσταται κατόπιν της εγκατάστασης του Motion. Μπορείτε να δείτε την διαδικασία στον σχετικό σύνδεσμο στις πηγές.
+			</p>
+			
+			<p class="report">Το Motion δεν έχει γραφικό περιβάλλον (GUI). Επομένως όλα γίνονται μέσω εντολών στο terminal που παρέχει το λειτουργικό σύστημα.
+			Για την παραμετροποίηση, υπάρχει ένα <b>αρχείο config</b> (συγκεκριμένα motion.conf) όπου μπορούμε να ορίσουμε όλες τις μεταβλητές που χρησιμοποιεί το λογισμικό.
+			Υπάρχουν μερικές επιλογές παραμετροποίησης που χρησιμοποιούνται μόνο αν το Motion γίνει build σε ένα σύστημα με τις αντίστοιχες software libraries εγκατεστημένες (MySQL, PostgreSQL and FFMPEG).
+			Εμείς στις υλοποιήσεις μας χρησιμοποιούμε τις libraries του FFMPEG (libavcodec). Ορισμένα παραδείγματα παραμέτρων είναι οι:
+			<br><br><strong>ffmpeg_cap_new, ffmpeg_cap_motion, ffmpeg_filename, ffmpeg_bps, ffmpeg_variable_bitrate, ffmpeg_video_codec</strong><br><br>
+			Μερικές ενδεικτικές παράμετροι που μας απασχόλησαν κατά τις δοκιμές είναι οι εξής:
+			<ul class="report">
+			<li><i>daemon</i>: ενεργοποίηση/απενεργοποίηση του daemon (background) mode
+			<li><i>framerate</i>: μέγιστος ρυθμός FPS που καταγράφει η κάμερα		
+			<li><i>gap</i>: διάστημα κατόπιν της τελευταίας καταγραφής κίνησης (σε seconds) για το οποίο απενεργοποιείται το motion detection
+			<li><i>height, width</i>: διαστάσεις εικόνας που καταγράφει η κάμερα	
+			<li><i>threshold</i>: κάτω όριο (σε αριθμό pixels που άλλαξαν) για τον εντοπισμό κίνησης		
+			<li><i>webcam_port</i>: δικτυακή θύρα στην οποία θα εκπέμπεται το stream, η διεύθυνση IP είναι αυτή που έχει ανατεθεί στον υπολογιστή όπου τρέχει το Motion			
+			</ul></p>
+			
+			<p class="report">
+			Η καταγραφή σφαλμάτων έχει υλοποιηθεί στο Motion έτσι ώστε τα σφάλματα κατά το daemon (background) mode να περνάνε στο syslog.
+			Το syslog βρίσκεται, στα περισσότερα συστήματα Linux, στο αρχείο <i>/var/log/messages</i>, στο <i>/var/log/syslog</i> ή στο <i>/var/log/user.log</i>.
+			</p>
+			<br>
             
             <h2>Σύγκριση και συμπεράσματα</h2>
             <p class="report">Όπως αναφέρεται και στην παρουσίαση, <b>μια εγκατάσταση CCTV</b> με συστήματα ασφαλείας που κυκλοφορούν στο εμπόριο, μπορεί να κοστίσει από 300 μέχρι και πάνω από 4000 ευρώ.
@@ -89,6 +120,7 @@
             <li><a href="https://www.raspberrypi.org/">Raspberry Pi, Official Webpage</a>
 			<li><a href="http://en.wikipedia.org/wiki/Raspberry_Pi">Raspberry Pi on Wikipedia</a>
 			<li><a href="http://www.lavrsen.dk/foswiki/bin/view/Motion/WebHome">Motion Webpage</a>
+			<li><a href="http://embeddedday.com/projects/raspberry-pi/a-step-further/install-motion-mmal/">Motion-MMAL installation</a>
 		</ul>
 		<br><br>
         </div>
