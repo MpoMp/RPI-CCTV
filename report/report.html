@@ -37,7 +37,7 @@
             <b>Υλοποίηση 1:</b>
             <br> Χρησιμοποιήθηκε η έκδοση MMAL του Motion, η οποία είναι αρκετά "ελαφριά" στους πόρους του Raspberry και υποστηρίζει το Raspberry Pi Camera Module - το οποίο είναι μέρος της υλοποίησης 1. Επιπλέον, για την αποστολή ειδοποιήσεων e-mail γράφτηκε ένα shell script που καλείται όταν εντοπίζεται κίνηση. Τέλος, για το ανέβασμα των φωτογραφιών χρησιμοποιήθηκε ένα shell script και η υπηρεσία dropbox.
             <br>
-            <b>Κόστος: 82€</b> = Raspberry Pi Model B (40 €) + Camera Module (30 €) + WiFi Dongle (9 €) + SD Card 4GB (3 €)
+            <b>Κόστος: 73€</b> = Raspberry Pi Model B (40 €) + Camera Module (30 €) + SD Card 4GB (3 €)
             <br>
             <br>
 
@@ -45,8 +45,7 @@
             <br> Χρησιμοποιήθηκε η βασική έκδοση του Motion, με το Motion Notify. Τα δεδομένα που καταγράφονται με τον εντοπισμό κίνησης στέλνονται σε χώρο στην υπηρεσία Google Drive.
             <br>
             <b>Κόστος: 65€</b> = Raspberry Pi Model B (40 €) + 3MP USB Camera (20 €) + SD Card 8GB (5 €)</p>
-        <br>
-        <br>
+			<br>
 
 
         <h2>Αναλυτικά: Hardware</h2>
@@ -115,6 +114,7 @@
 
         <p class="report">
             Όσον αφορά στην <b>παραμετροποίηση του DSL router</b>, αυτή εξαρτάται από το μοντέλο της συσκευής. Γενικά θα πρέπει να ελεγχθούν διάφορες ρυθμίσεις ασφαλείας που μπορεί να επηρεάσουν το stream (Built-In Firewall, ISP protection tools, port range blocks, κλπ.). Για την μετάδοση του stream προτείνεται να χρησιμοποιηθεί κάποια θύρα από την 9000 και άνω, που να μη χρησιμοποιείται από κάποια γνωστή υπηρεσία ή πρωτόκολλο δικτύου. Επίσης είναι απαραίτητο η θύρα αυτή να ρυθμιστεί ώστε να γίνει το forwarding της από το router. Αν χρησιμοποιηθεί κάποια υπηρεσία DDNS, είναι πιθανό να πρέπει να ρυθμιστεί και το router ανάλογα. Το Raspberry Pi μπορεί να συνδεθεί ενσύρματα (καλώδιο Ethernet) ή ασύρματα (WiFi adapter/Dongle) με το router.
+        <br>Ας σημειωθεί εδώ ότι ο chrome/chromium browser δεν υποστηρίζει το mjpeg stream. Προτείνεται η χρήση εκδόσεων του firefox.
         </p>
         <br>
 
@@ -125,15 +125,13 @@
         <p class="report">Εν κατακλείδι, στην εποχή μας είναι πλέον σχετικά εύκολο να εγκαταστήσει κάποιος, ακόμα και με βασικές γνώσεις Η/Υ και δικτύων, ένα σύστημα CCTV στο σπίτι ή την εργασία του. Οι επιλογές είναι πολλές καθώς αντί για το Raspberry Pi θα μπορούσε να χρησιμοποιηθεί οποιοσδήποτε υπολογιστής ή μικρο-υπολογιστής. Η επιλογή της κάμερας και του τρόπου εγκατάστασης εναπόκειται στον χρήστη και το κόστος είναι ανάλογο των αναγκών του. Με μια βασική σύνδεση DSL μπορεί επίσης να μεταδώσει σε πραγματικό χρόνο τις εικόνες από τις κάμερες σε ένα προστατευμένο (κατά το δυνατόν) stream.
         </p>
         <br>
-        <br>
 
 
         <h2>Αναφορές</h2>
         <ul class="report">
             <li><a href="https://www.raspberrypi.org/">Raspberry Pi, Official Webpage</a>
-                <li><a href="http://en.wikipedia.org/wiki/Raspberry_Pi">Raspberry Pi on Wikipedia</a>
-                    <li><a href="http://www.lavrsen.dk/foswiki/bin/view/Motion/WebHome">Motion Webpage</a>
-                        <li><a href="http://embeddedday.com/projects/raspberry-pi/a-step-further/install-motion-mmal/">Motion-MMAL installation</a>
+            <li><a href="http://www.lavrsen.dk/foswiki/bin/view/Motion/WebHome">Motion Webpage</a>
+            <li><a href="https://github.com/dozencrows/motion/tree/mmal-test">Motion-MMAL on GitHub</a>
         </ul>
         <br>
         <br>
