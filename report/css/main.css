@@ -2,7 +2,8 @@ body{
     background:#e4e4e4;
     font-family:Verdana, Helvetica, Arial, sans-serif;
     margin:0;
-    padding:0
+    padding:0;
+    display: block;
 }
 
 .example{
@@ -56,4 +57,25 @@ h1 {
     padding-left: 250px;
     padding-right: 250px;
     text-align:left;
+}
+
+.span2:focus ~ .alert {
+  display: none;
+  padding-left: 250px;
+  padding-right: 250px;
+  text-align:left;
+  font-weight: bold;
+}
+
+.span3:focus ~ .alert {
+  display: block;
+  padding-left: 250px;
+  padding-right: 250px;
+  text-align:left;
+  font-weight: bold;
+}
+
+.alert {
+  padding-left: 250px;
+  padding-right: 250px;
 }

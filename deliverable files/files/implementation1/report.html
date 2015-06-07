@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/script.js"></script>
+    <title>Screenshots | RPI SecCam</title>
+    <link rel="icon" type="image/png" href="../../../images/favicon.png" />
+</head>
+
+<body>
+    <div class="example">
+        <h1> Raspberry Pi Security Camera Project</h1>
+        <h3><a href="../../index.html"><img src="../../images/rindex.png" style="width:60px" onmouseover="this.src='../../images/rindex2.png'" onmouseout="this.src='../../images/rindex.png'" /></a>
+            <a href="../../presentation/presentation.html"><img src="../../images/rpresentation.png" style="width:60px" onmouseover="this.src='../../images/rpresentation2.png'" onmouseout="this.src='../../images/rpresentation.png'" /></a>
+            <a href="../../report/report.html"><img src="../../images/rreport.png" style="width:60px" onmouseover="this.src='../../images/rreport2.png'" onmouseout="this.src='../../images/rreport.png'" /></a>
+        </h3>
+        <div>
+			<p class="report">Μπαίνουμε με ssh στο Raspberry και ξεκινάμε τον cron, ο οποίος τρέχει το script για το uploading των στιγμιοτύπων, και το Motion.<br><br>
+            <img src="images/1.png"/><br><br><br><br>
+            Εικόνα από τον cron. Φαίνεται ότι το script για το uploading καλείται κάθε 1 λεπτό για να ελέγξει για νέες φωτογραφίες.<br><br>
+            <img src="images/2.png" style="width:1000px"/><br><br><br><br>
+            Στην επόμενη εικόνα φαίνεται το πρώτο email που στέλνει το Motion μόλις ξεκινάει, ώστε να βεβαιωθούμε πως όλα λειτουργούν.<br><br>
+            <img src="images/3.png"/><br><br><br><br>
+            Μπαίνοντας στο link που υπάρχει στο προηγούμενο email (και αφότου έχει γίνει το κατάλληλο port forward) βγαίνουμε σε μία σελίδα που ζητάει τα credentials για το stream.<br><br>
+            <img src="images/4.png" style="width:1000px"/><br><br><br><br>
+            Βάζουμε τα credentials που έχουμε ορίσει στο motion.conf.<br><br>
+            <img src="images/5.png"/><br><br><br><br>
+            Εμφανίζεται το stream.<br><br>
+            <img src="images/6.png" style="width:1000px"/><br><br><br><br>
+            Εδώ γίνεται ένας απλός έλεγχος ότι λειτουργεί η ανίχνευση κίνησης.<br><br>
+            <img src="images/7.png" style="width:1000px"/><br><br><br><br>
+            Εντοπίζεται η κίνηση και αμέσως στέλνεται ένα νέο email.<br><br>
+            <img src="images/8.png "/><br><br><br><br>
+            Παρατηρούμε ότι οι φωτογραφίες έχουν ήδη αρχίσει να ανεβαίνουν στο dropbox.<br><br>
+            <img src="images/9.png" style="width:1000px"/><br><br><br><br>
+    </p>
+    </div>
+
+    <footer class="footer2">
+        <p>Created for the purposes of Multimedia Technology Course</p>
+        <p>CS AUEB 2014-2015</p>
+        <p><i>© Linuxoeideis -- {Bogdanos Michail #3100123, Thomas Charalampos #3100053, Stavropoulos Konstantinos #3100172} -- <a href="mailto:p3100172@dias.aueb.gr">Contact</a></i>
+        </p>
+        <br>
+    </footer>
+</body>
+
+</html>
