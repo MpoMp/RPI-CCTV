@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Presentation | RPI SecCam</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+	<link rel="icon" type="image/png" href="pictures/favicon.png"/>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Low-cost home CCTV with Raspberry Pi</h1>
+	</header>
+	
+	<section class="slide cover" id="Cover"><div>
+		<h2>Raspberry Pi Home Security Camera Project</h2>
+		<h3><b>M. Bogdanos, K. Stavropoulos, C. Thomas</b><br>© Linuxoeideis</h3>
+		<img src="pictures/cover.jpg" alt="">
+		<style>
+			#Cover h2 {
+				margin:1px 0 0;
+				color:#FFF;
+				text-shadow: 2px 2px #BABABA;
+				text-align:center;
+				font-size:70px;
+				}
+			#Cover h3 {
+				margin:200px 0 0;
+				color:#FFF;
+				text-shadow: 2px 2px #BABABA;
+				text-align:center;
+				font-size:40px;
+				}
+			#Cover p {
+				text-align:center;
+				color:red;
+				text-shadow: 2px 2px #666666;
+				font-style:italic;
+				font-size:20px;
+				}
+		</style>
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>Home Security Camera; Why?</h2>
+		<center><img src="pictures/fun1.jpg" style="width:375px;height:400px"></center>
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>Home Security Camera; Why?</h2>
+		<center><img src="pictures/fun2.jpg" style="width:225px;height:200px"><img src="pictures/fun3.jpg" style="width:225px;height:200px">
+		<br><img src="pictures/fun4.jpg" style="width:450px;height:200px"></center>
+	</div></section>
+	
+	<section class="slide"><div>
+		<br><blockquote><i>There is no such thing as perfect security, only varying levels of insecurity. </i></blockquote>
+		<br><center><img src="pictures/security.png">
+		<br><a href="http://xkcd.com/538/">xkcd.com</a>
+		</center>
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>Home Security Camera; Issues</h2>
+		<ul>
+			<li><b>Cost</b>; camera, cables, storage, setup.</li>
+			<li class="next"><b>Complexity</b>; house modifications, camera setup, storage and recording.</li>
+			<li class="next"><b>Access</b>; local or remote, access control, protection.</li>
+			<li class="next"><b>Ownership</b>; yours or by a third-party.</li>
+		</ul>	
+		<center><img src="pictures/nosec.jpg" style="width:300px;height:180px"></center>		
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>Common solutions for home CCTV</h2>
+		<ul>
+			<li><b>Cost</b> range from 400 to 3000+ euro...</li>
+			<li class="next"><b>Difficulty</b> in installing and configuring.</li>
+			<li class="next">In some cases there are no options for customization at all.</li>
+			<li class="next">You have to use specific types of storage and cables.</li>
+		</ul>	
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>The RPI solution</h2>
+		<ul>
+			<li><b>Cheap and scalable</b>; use a simple USB camera or an HD security camera.</li>
+			<li class="next"><b>Easy to setup</b>; hundreds of guides for setting up Raspbian and the camera software.</li>
+			<li class="next"><b>Highly customisable</b>; based mostly on open software and flexible hardware.</li>
+			<li class="next"><b>Accessible and secure</b>; access locally or via the Internet, use and configure any type of security measures you prefer.</li>
+		</ul>	
+	</div></section>
+	
+	
+	<section class="slide"><div>
+		<h2>Topology</h2>
+		<center><img src="pictures/topology2.jpg" style="height:380px"></center>
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>How it works (Components)</h2>
+		<ul>
+			<li><b>Raspberry Pi</b>; low cost, credit-card sized computer</li>
+			<li class="next"><b>Simple camera</b>; RPI camera module or any regular USB camera</li>
+			<li class="next"><b>Router</b>; your home router and a regular DSL connection</li>
+			<li class="next"><b>Storage</b>; use a cloud storage service, your own server or local storage (even RPI's SD card!)</li>
+		</ul>	
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>How it works (Software)</h2>
+		<ul>
+			<li><b>Raspbian</b>; free operating system based on Debian, optimized for the Raspberry Pi hardware</li>
+			<li class="next"><b>Motion (or Motion MMAL)</b>; highly customizable software motion detector, written in C for Linux</li>
+			<li class="next"><b>Motion Notify</b>; notification system for Motion providing upload to Google Drive and email notification, written in Python</li>
+			<li class="next"><b>Remote server setup</b>; (optional) Motion provides a simple video stream but you can customize your remote access interface</li>
+		</ul>	
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>How it works (Software)</h2>
+		<ul>
+			<li>You can use <b>any other plugin</b> for motion detection and notifications.</li>
+			<li class="next">Even <b>write your own</b> and use another cloud service (OneDrive, Dropbox, Mega, etc.)!</li>
+			<li class="next">You may use other <b>notification software</b> that sends messages to you on your <b>mobile or laptop</b> anywhere (e.g. Growl).</li>
+			<li class="next">Or setup an <b>email notification system</b> of your own and upload to a server you own via FTP.</li>
+			<li class="next"><b>Example</b> of uploads: <a href="https://www.dropbox.com/sh/0wqkg0uf1k21prg/AACmTIfAG_4ITyKdrscJewdSa?dl=0">Dropbox</a>, <a href="https://drive.google.com/open?id=0B4SupNo1aAhOfl9nclNlaVpHeU00OXZUa3oxSk94NmlybXBRdm9Ud0EwREpmRmYzWk5yM1U&authuser=0">Drive</a></li>
+		</ul>	
+	</div></section>
+	
+	<section class="slide shout"><div>
+		<h2><i>Read more @ <br> <a href="../report/report.html">full report</a></i></h2>
+	</div></section>
+	
+
+	
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2014 Yours Truly, Famous Inc. -->
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
